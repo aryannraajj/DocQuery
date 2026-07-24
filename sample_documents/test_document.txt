@@ -1,0 +1,81 @@
+Sample Document for RAG Testing
+
+Introduction
+============
+
+This is a sample document created to test the RAG-based Question Answering System. The system uses Retrieval-Augmented Generation to answer questions based on uploaded documents.
+
+Key Features
+============
+
+1. Document Upload
+   - Supports PDF, TXT, and DOCX formats
+   - Maximum file size: 10MB
+   - Automatic background processing
+
+2. Text Chunking
+   - Intelligent sentence-aware splitting
+   - Chunk size: 512 tokens
+   - Overlap: 50 tokens for context continuity
+
+3. Semantic Search
+   - Uses sentence-transformers for embeddings
+   - FAISS vector store for fast similarity search
+   - Returns top-5 most relevant chunks
+
+4. Question Answering
+   - Extractive QA approach
+   - Provides source citations
+   - Displays similarity scores
+
+Technical Details
+=================
+
+The system is built using:
+- FastAPI for the backend API
+- Sentence-Transformers for generating embeddings
+- FAISS for vector similarity search
+- Local processing (no external API calls required)
+
+The embedding model used is "all-MiniLM-L6-v2" which produces 384-dimensional
+vectors. This model is efficient and provides good quality semantic search
+capabilities while running entirely locally.
+
+Performance Metrics
+==================
+
+Average response times:
+- Document processing: 5-10 seconds for a 10-page PDF
+- Question answering: 1-3 seconds
+- Embedding generation: ~50ms per chunk
+- Vector search: <100ms for 1000 chunks
+
+The system has been optimized for speed while maintaining accuracy. Background
+processing ensures that users don't have to wait for document ingestion.
+
+Use Cases
+=========
+
+This RAG system is ideal for:
+- Research paper analysis
+- Legal document review
+- Technical documentation search
+- Educational material comprehension
+- Corporate knowledge base querying
+
+Example Questions
+================
+
+Try asking:
+- "What is this document about?"
+- "What are the key features?"
+- "How does the system work?"
+- "What technologies are used?"
+- "What are the performance metrics?"
+
+Conclusion
+==========
+
+The RAG-based Question Answering System demonstrates the power of combining
+retrieval and generation for intelligent document querying. It provides fast,
+accurate answers backed by source citations.
